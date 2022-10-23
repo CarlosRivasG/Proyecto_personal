@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block titulo %}Panel de productos{% endblock %}
+{% block contenido %}
+
+
+{% include '_menu.html' %}
+    
+    
+
+    <img src="static/img/TOP10.png" class="img-fluid"  alt="img" width="100%" height="300px" >
+    <hr>
+    <div class="container position-relative px-10 px-lg-15">
+        <div class="row gx-4 gx-lg-15 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>¡ Bienvenidos  a Stoker !</h1>
+                    <span class="subheading">Otra manera de llevar tu registro de productos, de una manera mas facil y amigable. </span>
+                </div>
+            </div>
+        </div>
+    </div>
+<hr>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card h-100">
+                <img src="static/img/pexel.jpg" class="card-img-top" alt="img">
+            <div class="card-body">
+                <h5 class="card-title">Registro de Stock</h5>
+                <p class="card-text">Gracias a la tecnologia que acompaña este proyecto, podemos registrar 
+                    y administrar todos nuestros productos, asi optimizando y mejorando la experiencia del usuario.</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">hace 3 dias</small>
+            </div>
+        </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+            <img src="static/img/pexel2.jpg" class="card-img-top" alt="img">
+            <div class="card-body">
+                <h5 class="card-title">Proveedores de calidad</h5>
+                <p class="card-text">En Stoker vas a poder contactar proveedores de calidad y en tu ciudad.
+                    Nos importa que tengas las mejores ofertas del mercado
+                </p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Hace 1 dia</small>
+            </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                    <img src="static/img/pexel3.jpg" class="card-img-top" alt="img">
+                <div class="card-body">
+                    <h5 class="card-title">Manten tus productos frescos</h5>
+                    <p class="card-text">Siempre trata de mantener tus productos bien frescos y al dia, te ayudaremos a que tus productos no se dañen tan facilmente ¿como haremos esto? ps informandote de todas las novedades para esto.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Hace 2 minutos</small>
+                </div>
+            </div>
+        </div>
+        </div>
+        {% include 'footer.html' %}
+{% endblock %}

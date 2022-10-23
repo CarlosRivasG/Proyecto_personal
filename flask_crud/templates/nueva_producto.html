@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block titulo %}Nuevo producto{% endblock %}
+{% block contenido %}
+{% include '_menu.html' %}
+
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12 col-lg-6">
+    <h1>Agregar un producto</h1>
+
+    <form action="/procesar_producto" method="post">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+            <input required name='nombre' type="text" class="form-control" id="exampleFormControlInput1" placeholder="Filete">
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Cantidad en kg</label>
+          <input required name='cantidad' type="text" class="form-control" id="exampleFormControlInput1" placeholder="45">
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Precio</label>
+          <input required name='precio' type="text" class="form-control" id="exampleFormControlInput1" placeholder="203.666">
+        </div>
+        <label for="tipo_producto" class="form-label">Tipo de producto</label>
+
+        <select class="form-select mb-3" name='tipo_producto' id='tipo_producto' aria-label="tipo_producto">
+          <option selected>Productos</option>
+          <option value="proteina">Proteina</option>
+          <option value="Frutas y verduras">Frutas y Verduras</option>
+          <option value="Mariscos">Mariscos</option>
+          <option value="Otros">Otros</option>
+        </select>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+            <textarea required  name="descripcion" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        
+        
+        <div class="row">
+            <div class="col-2">
+                <button type="submit" class="btn btn-success">Agregar producto</button>
+            </div>
+          </div>
+            
+    </form>
+    <hr>
+    <div class="card">
+      <img src="https://www.casademar.cl/admin/adicionales/1642001740.png" class="card-img-top" alt="imagen de verduras y frutas" >
+    
+      <div class="card-body">
+        <h5 class="card-title">Mariscos</h5>
+        <p class="card-text">Los productos del mar mas frescos del mercado buey de mar, camarón, cangrejo, carabinero, centollo, cigala, gamba, gamba roja, langosta, langostino. </p>
+        <a href="#" class="btn btn-primary">Stock de mariscos</a>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="col-md-12 col-lg-6">
+
+    <h1>Tipo de producto</h1>
+    <hr>
+
+    <div class="card">
+      <img src="https://www.cucinare.tv/wp-content/uploads/2020/11/Alimentos-con-prote%C3%ADnas.jpg" class="card-img-top" alt="imagen de proteina" >
+    
+      <div class="card-body">
+        <h5 class="card-title">Proteinas</h5>
+        <p class="card-text">Pescados, carnes rojas y blancas.</p>
+        <a href="#" class="btn btn-primary">Stock de proteinas</a>
+      </div>
+    </div>
+    <hr>
+    <div class="card">
+      <img src="https://images.ecestaticos.com/-lvjpJLJluki4Zj7bXKJWC9Tiso=/130x25:676x434/1200x898/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2Fb25%2F568%2Fb4f%2Fb25568b4fdd2ab303a931ae702ebf800.jpg" class="card-img-top" alt="imagen de verduras y frutas" >
+    
+      <div class="card-body">
+        <h5 class="card-title">Verduras y frutas</h5>
+        <p class="card-text">Variedad en productos frescos directos del guerto, tomate, cebolla, espinaca, pimenton, berengena, boiato y mas... </p>
+        <a href="#" class="btn btn-primary">Stock de frutas y verduras</a>
+      </div>
+    </div>
+
+
+
+
+  </div>
+  </div>
+</div>
+
+
+{% endblock %}

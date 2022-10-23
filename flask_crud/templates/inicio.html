@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block titulo %}Panel de productos{% endblock %}
+{% block contenido %}
+
+
+{% include '_menu.html' %}
+    <div class="container mt-5 ">
+        <h1>productos</h1>
+    </div>
+
+    <div class="container mt-5">
+        {% for producto in productos  %}
+        <div class='alert alert-primary'>
+            <p>
+                <a href="/producto/{{producto.usuario_id}}">{{producto.titulo}}</a> agregado por {{producto.nombre_usuario}} 
+                {% if session['usuario_id']== producto.usuario_id%}    
+            <a href="/eliminar/producto/{{producto.id}}">eliminar</a> | <a href="/producto/{{producto.id}}/editar">editar</a>   
+            {% endif %}
+        </p>
+        </div>    
+        {% endfor %}  
+    </div>
+
+
+{% endblock %}

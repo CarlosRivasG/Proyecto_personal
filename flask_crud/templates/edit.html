@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block titulo %}Panel de productos{% endblock %}
+{% block contenido %}
+
+{% include '_menu.html' %}
+
+
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12 col-lg-4">
+            <h1>Actualizar</h1>
+
+            <form action="/procesar_actualizacion/{{productos.id}}" method="post">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+                    <input required name='nombre' type="text" class="form-control" id="exampleFormControlInput1" value= "{{productos.nombre}}" >
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Cantidad en kg</label>
+                    <input required name='cantidad' type="text" class="form-control" id="exampleFormControlInput1" value= "{{productos.cantidad}}">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Precio</label>
+                    <input required name='precio' type="text" class="form-control" id="exampleFormControlInput1" value= "{{productos.precio}}">
+                </div>
+                <label for="tipo_producto" class="form-label">Tipo de producto</label>
+        
+                <select class="form-select mb-3" name='tipo_producto' id='tipo_producto' aria-label="tipo_producto">
+                    <option selected>{{productos.tipo_producto}}</option>
+                    <option value="proteina">Proteina</option>
+                    <option value="Frutas y verduras">Frutas y Verduras</option>
+                    <option value="Mariscos">Mariscos</option>
+                    <option value="Otros">Otros</option>
+                </select>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+                    <textarea required  name="descripcion" class="form-control" id="exampleFormControlTextarea1" rows="3" >{{productos.descripcion}}</textarea>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <button type="submit" class="btn btn-success">Actualizar</button>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+
+            
+        
+
+    </div>
+
+
+
+
+
+
+
+{% endblock %}

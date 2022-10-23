@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block titulo %}Panel de productos{% endblock %}
+{% block contenido %}
+{% include '_menu.html' %}
+
+
+<div class="container mt-5 ">
+    <h1>Productos </h1>
+
+    <table class=" table table-dark stable-striped table-hover  ">
+        <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">T. de producto</th>
+                    <th scope="col">Opciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for productos in product  %}
+                <tr>                    
+                    <th scope="row"> {{productos.nombre }} </th>
+                    <td>{{productos.cantidad}} kg</td>
+                    <td>{{productos.precio }} $</td>
+                    <td>{{productos.descripcion }}</td>
+                    <td>{{productos.tipo_producto }}</td> 
+                    <td> <a class="btn btn-outline-primary btn-sm" href="/producto/{{productos.id}}/editar"><i class="fa fa-search-plus fa-lg" aria-hidden="true"></i></a>  
+                        <a class="btn btn-outline-danger btn-sm" href="/eliminar/producto/{{productos.id}}"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a></td>
+                
+                </tr>
+                {% endfor %}
+        
+        </tr>
+        </tbody>
+    </table>
+
+        
+</div>
+
+
+
+
+
+{% endblock %}
