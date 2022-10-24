@@ -12,7 +12,7 @@
                 <tr>
                     <th scope="col">Nombre</th>
                     <th scope="col">Cantidad</th>
-                    <th scope="col">Precio</th>
+                    <th scope="col">Precio * kg</th>
                     <th scope="col">Descripción</th>
                     <th scope="col">T. de producto</th>
                     <th scope="col">Opciones</th>
@@ -22,7 +22,7 @@
                     {% for productos in product  %}
                 <tr>                    
                     <th scope="row"> {{productos.nombre }} </th>
-                    <td>{{productos.cantidad}} kg</td>
+                    <td>{{productos.numero_kg}} kg <a class="btn btn-outline-primary btn-sm" href="/procesar_cantidad/{{productos.id}} "><i class="fa fa-plus" aria-hidden="true"></i><a class="btn btn-outline-danger btn-sm" href="/procesar_cantidad_negativa/{{productos.id}} "><i class="fa fa-minus" aria-hidden="true" ></i></a></a></td>
                     <td>{{productos.precio }} $</td>
                     <td>{{productos.descripcion }}</td>
                     <td>{{productos.tipo_producto }}</td> 
@@ -42,5 +42,5 @@
 
 
 
-
+{% include 'footer.html' %}
 {% endblock %}

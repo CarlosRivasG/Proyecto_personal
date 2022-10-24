@@ -48,7 +48,7 @@ def procesar_producto():
 
     data = {
         'nombre' : request.form['nombre'],
-        'cantidad' : request.form['cantidad'],
+        
         'precio' : request.form['precio'],
         'tipo_producto' : request.form['tipo_producto'],
         'descripcion' : request.form['descripcion'],        
@@ -90,7 +90,7 @@ def Actualizar_producto(id):
     actz_producto= {
             "id":id,
             'nombre' : request.form['nombre'],
-            'cantidad' : request.form['cantidad'],
+            
             'precio' : request.form['precio'],
             'tipo_producto' : request.form['tipo_producto'],
             'descripcion' : request.form['descripcion'],        

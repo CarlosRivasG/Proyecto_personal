@@ -16,7 +16,7 @@ class ModeloBase():
 
     @classmethod
     def get_all(cls):
-        query = f"SELECT * FROM {cls.modelo};"
+        query = f"Select p.*, u.nombre as nombre_usuario, count(c.producto_id) as numero_kg FROM productos p JOIN usuarios u ON u.id = p.usuario_id LEFT JOIN cantidades c ON c.producto_id = p.id group by p.id"
         results = connectToMySQL(os.environ.get("BASEDATOS_NOMBRE")).query_db(query)
         all_data = []
         for data in results:
